@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Caeser Cipher</title>
+<link rel="stylesheet" type="text/css" href="cipherCW.css">
+</head>
+<body>
+
+<h1>Caesar Cipher</h1>
+<p>
+The Caesar Cipher is a type of substitution cipher that replaces each letter of the message with a corresponding letter later or earlier in the alphabet. <br>
+Eg. if moved up by three places: A -> D, B -> E, E -> H, etc.
+</p>
+<p>
+The ROT13 cipher is a special kind of Caesar Cipher which creates an inverse for each letter, allowing the message to be ciphered and deciphered using the same algorithm.
+<br>
+The Caesar Cipher is often incorporated into more complex systems.
+</p>
+<p>Try out the cipher below to code your message. <br>You can also try inputting a coded message and deciphering it.
+
+<p>Input: <br>
+<input type="textbox" id="input"></input></p>
+<p>Output: <br>
+<input type="textbox" id="output"></input></p>
+
+<button type="button" onclick="Cipher()">Cipher</button>
+<button type="button" onclick="Decipher()">Decipher</button>
+
+<script>
+function Cipher() 
+{ 
+var outputStr = "";
+var inputStr = input.value;
+for (var i = 0; i < inputStr.length; i++)
+{
+var a = inputStr.charCodeAt(i);
+var b = "";
+if ((a>=65)&&(a<=90))
+{
+b = String.fromCharCode(((a - 65 + 3) % 26) + 65);
+outputStr+=b;
+}
+else if ((a>=97)&&(a<=122))
+{
+b = String.fromCharCode(((a - 97 + 3) % 26) + 97);
+outputStr+=b;
+}
+else if (a==32)
+outputStr+= " ";
+}
+output.value = outputStr;
+}
+</script>
+
+<script>
+function Decipher() 
+{
+var outputStr = "";
+var inputStr = input.value;
+for (var i = 0; i < inputStr.length; i++)
+{
+var a = inputStr.charCodeAt(i);
+var b = "";
+if ((a>=65)&&(a<=90))
+{
+b = String.fromCharCode(((a - 65 + 23) % 26) + 65);
+outputStr+=b;
+}
+else if ((a>=97)&&(a<=122))
+{
+b = String.fromCharCode(((a - 97 + 23) % 26) + 97);
+outputStr+=b;
+}
+else if (a==32)
+outputStr+= " ";
+}
+output.value = outputStr;
+}
+</script>
+
+</body>
+</html>

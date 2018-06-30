@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Chinese Cipher</title>
+<link rel="stylesheet" type="text/css" href="cipherCW.css">
+</head>
+<body>
+<h1>Transposition Cipher</h1>
+<p>
+A transposition cipher is a method that maintains the same letters, but rearranges their order. 
+<br>An example of a simple transposition cipher is reversing the letters of a message.  <br>
+</p>
+
+<p>Try out the cipher below to code your message. <br>You can also try inputting a coded message and deciphering it.
+
+<p>Input: <br>
+<input type="textbox" id="input"></input></p>
+<p>Output: <br>
+<input type="textbox" id="output"></input></p>
+
+<button type="button" onclick="Cipher()">Cipher</button>
+<button type="button" onclick="Cipher()">Decipher</button>
+
+<script>
+function Cipher() 
+{
+var inputStr = input.value;
+var x = inputStr.split("");
+var y = x.reverse();
+var z = y.join("");
+output.value = z;
+}
+</script>
+
+</body>
+</html>

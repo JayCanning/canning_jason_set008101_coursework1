@@ -1,0 +1,10 @@
+body {
+	background-image: url("cipherbg.jpg");
+	background-image opacity: 0.5;
+	font-size: 18px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 36px;
+}
